@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robotic Hand Rehabilitation Dashboard</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+
+        <h1>Robotic Hand Rehabilitation Dashboard</h1>
+
+        <p>Servo Therapy Control Panel</p>
+
+        <div class="status">
+            <span class="dot"></span>
+            Arduino Connected
+        </div>
+
+    </header>
+
+    <!-- ================= Servo 1 ================= -->
+
+    <div class="card">
+
+        <div class="titleRow">
+            <h2>Shoulder</h2>
+
+            <button id="gameBtn">
+                🎮 Gamify Mode
+            </button>
+        </div>
+
+        <!-- Manual Slider -->
+
+        <div id="manualControl">
+
+            <input
+                type="range"
+                id="servo1"
+                min="0"
+                max="180"
+                value="0">
+
+        </div>
+
+        <!-- Safe Limit -->
+
+        <div class="limitSection">
+
+            <h3>Maximum Safe Angle</h3>
+
+            <input
+                type="range"
+                id="limit1"
+                min="30"
+                max="180"
+                value="120">
+
+            <span id="limitValue">120°</span>
+
+        </div>
+
+        <!-- Gamify Gauge -->
+
+        <div id="gaugeContainer" style="display:none;">
+
+            <canvas
+                id="gauge"
+                width="450"
+                height="260">
+            </canvas>
+
+        </div>
+
+        <div id="warning"></div>
+
+    </div>
+
+    <!-- ================= Servo 2 ================= -->
+
+    <div class="card">
+
+        <h2>Elbow</h2>
+
+        <input
+            type="range"
+            id="servo2"
+            min="0"
+            max="180"
+            value="0">
+
+    </div>
+
+    <!-- ================= Servo 3 ================= -->
+
+    <div class="card">
+
+        <h2>Fingers</h2>
+
+        <input
+            type="range"
+            id="servo3"
+            min="0"
+            max="180"
+            value="0">
+
+    </div>
+
+    <!-- Buttons -->
+
+    <div class="controls">
+
+        <button id="reset">
+
+            🔄 Reset All
+
+        </button>
+
+        <button id="stop">
+
+            🛑 Emergency Stop
+
+        </button>
+
+    </div>
+
+</div>
+
+<script src="/static/script.js"></script>
+
+</body>
+
+</html>
